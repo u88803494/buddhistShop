@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Nav />
-        <main className="min-h-dvh"> 
+        <main className="min-h-dvh flex justify-center"> 
           {children}
         </main>
         <Footer />
