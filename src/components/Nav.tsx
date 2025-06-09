@@ -26,28 +26,28 @@ const icons = {
 
 const menuItems = [
   {
-    label: "靜思人文 JingSi Culture",
+    title: "靜思人文 JingSi Culture",
     links: [
       { label: "理念 Philosophy", href: "#" },
       { label: "活動 Events", href: "#" },
     ],
   },
   {
-    label: "產品 Products",
+    title: "產品 Products",
     links: [
       { label: "全部商品 All Products", href: "/products" },
       { label: "新品 New Arrivals", href: "#" },
     ],
   },
   {
-    label: "推薦 Suggests",
+    title: "推薦 Suggests",
     links: [
       { label: "熱銷商品 Hot", href: "#" },
       { label: "精選推薦 Picks", href: "#" },
     ],
   },
   {
-    label: "緣起 Origin",
+    title: "緣起 Origin",
     links: [
       { label: "品牌故事 Story", href: "#" },
       { label: "關於我們 About", href: "/about" },
@@ -74,20 +74,24 @@ const Nav = () => {
           </div>
           {/* Menu */}
           <div className="flex-[2] flex items-center justify-center">
-            <NavigationMenu>
-              <NavigationMenuList className="gap-2">
-                {menuItems.map((item) => (
-                  <NavigationMenuItem key={item.label}>
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                {menuItems.map((item, idx) => (
+                  <NavigationMenuItem key={idx}>
                     <NavigationMenuTrigger className="bg-transparent text-base font-medium px-3 py-2">
-                      {item.label}
+                      {item.title}
                     </NavigationMenuTrigger>
-                    {/* FIXME: 下拉選單位置錯誤 */}
                     <NavigationMenuContent>
-                      <ul className="flex flex-col gap-2 min-w-[160px] p-2">
+                      <ul className="grid w-[200px] gap-4">
                         {item.links.map((link) => (
                           <li key={link.label}>
                             <NavigationMenuLink asChild>
-                              <Link href={link.href}>{link.label}</Link>
+                              <Link
+                                href={link.href}
+                                className="text-[#787777] hover:text-[#A29380] hover:underline underline-offset-4 hover:bg-transparent transition-colors duration-150 px-1 py-0.5"
+                              >
+                                {link.label}
+                              </Link>
                             </NavigationMenuLink>
                           </li>
                         ))}
