@@ -17,7 +17,7 @@ const banners = [
 
 const HeroCarousel = () => {
   return (
-    <section className="relative w-full h-[340px] md:h-[480px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[180px] sm:h-[260px] md:h-[340px] lg:h-[480px] flex items-center justify-center overflow-hidden">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -27,7 +27,7 @@ const HeroCarousel = () => {
       >
         {banners.map((banner, idx) => (
           <SwiperSlide key={idx}>
-            <div className="relative w-full h-[340px] md:h-[480px]">
+            <div className="relative w-full h-[180px] sm:h-[260px] md:h-[340px] lg:h-[480px]">
               <Image
                 src={banner?.image ?? ""}
                 alt={banner?.image ?? ""}
@@ -35,12 +35,6 @@ const HeroCarousel = () => {
                 className="object-cover"
                 priority={idx === 0}
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
-                <h1 className="text-4xl md:text-6xl font-bold text-[#2d3756] mb-2 drop-shadow-lg">{banner.title}</h1>
-                <h2 className="text-2xl md:text-3xl text-[#2d3756] mb-4 drop-shadow-lg">{banner.subtitle}</h2>
-                <div className="text-base md:text-lg text-[#2d3756] font-medium drop-shadow-lg">
-                </div>
-              </div>
             </div>
           </SwiperSlide>
         ))}
