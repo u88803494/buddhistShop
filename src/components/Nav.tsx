@@ -1,4 +1,6 @@
-import React from "react";
+"use client"
+
+import { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -57,10 +59,12 @@ const menuItems = [
 ];
 
 const Nav = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <>
       {/* Top Bar */}
-      <div className="w-full h-10 bg-[#a89e8a] flex items-center justify-end px-6 text-xs text-white">
+      <div className="w-full h-10 bg-[#a89e8a] flex items-center justify-end px-4 text-xs text-white">
         <span className="mr-2">社群Follow：</span>
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
           {icons.facebook}
@@ -68,13 +72,13 @@ const Nav = () => {
       </div>
       {/* Main Navbar */}
       <nav className="w-full border-b bg-[#e5ded3] sticky top-0 z-50 h-18 flex items-center">
-        <div className="container mx-auto flex items-center justify-between py-2 px-4">
+        <div className="container mx-auto flex items-center justify-between py-2 px-2">
           {/* LOGO */}
-          <div className="flex-1 min-w-[120px] flex items-center">
-            <img src="/logo_navbar.png" alt="logo" className="h-10 w-auto" />
+          <div className="flex-1 min-w-[80px] flex items-center">
+            <img src="/logo_navbar.png" alt="logo" className="h-8 w-auto" />
           </div>
-          {/* Menu */}
-          <div className="flex-[2] flex items-center justify-center">
+          {/* Desktop Menu */}
+          <div className="flex-[2] items-center justify-center hidden md:flex">
             <NavigationMenu viewport={false}>
               <NavigationMenuList>
                 {menuItems.map((item, idx) => (
@@ -107,13 +111,63 @@ const Nav = () => {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          {/* Icons */}
-          <div className="flex-1 min-w-[120px] flex items-center justify-end gap-6">
+          {/* Icons + Hamburger */}
+          <div className="flex-1 min-w-[80px] flex items-center justify-end gap-4">
             <button aria-label="search" className="hover:text-primary">{icons.search}</button>
             <button aria-label="user" className="hover:text-primary">{icons.user}</button>
             <button aria-label="cart" className="hover:text-primary">{icons.cart}</button>
+            {/* Hamburger */}
+            <button
+              className="md:hidden ml-2"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+            >
+              <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
         </div>
+        {/* Mobile Menu Drawer */}
+        {mobileOpen && (
+          <div className="fixed inset-0 bg-black/40 z-50 flex">
+            <div className="bg-white w-4/5 max-w-xs h-full p-6 flex flex-col">
+              <button
+                className="mb-6 self-end"
+                onClick={() => setMobileOpen(false)}
+                aria-label="Close menu"
+              >
+                <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M6 6l12 12M6 18L18 6" />
+                </svg>
+              </button>
+              {menuItems.map((item) => (
+                <div key={item.title} className="mb-6">
+                  <div className="font-bold text-lg text-[#2d3756] mb-2 tracking-wide">{item.title}</div>
+                  <ul>
+                    {item.links.map((link) => (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          className={clsx(
+                            "block py-2 px-2 text-base text-[#787777] transition-colors duration-150",
+                            "hover:text-[#A29380]",
+                            "hover:underline underline-offset-4"
+                          )}
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            {/* 點擊遮罩關閉 */}
+            <div className="flex-1" onClick={() => setMobileOpen(false)} />
+          </div>
+        )}
       </nav>
     </>
   );
