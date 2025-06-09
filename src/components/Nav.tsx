@@ -8,6 +8,7 @@ import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import clsx from "clsx";
 
 const icons = {
   search: (
@@ -88,7 +89,11 @@ const Nav = () => {
                             <NavigationMenuLink asChild>
                               <Link
                                 href={link.href}
-                                className="text-[#787777] hover:text-[#A29380] hover:underline underline-offset-4 hover:bg-transparent transition-colors duration-150 px-1 py-0.5"
+                                className={clsx(
+                                  "text-[#787777] px-1 py-0.5",
+                                  "hover:text-[#A29380] hover:underline hover:bg-transparent",
+                                  "underline-offset-4  transition-colors duration-150"
+                                )}
                               >
                                 {link.label}
                               </Link>
