@@ -59,18 +59,18 @@ const Nav = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="w-full h-7 bg-[#a89e8a] flex items-center justify-end px-6 text-xs text-white">
+      <div className="w-full h-10 bg-[#a89e8a] flex items-center justify-end px-6 text-xs text-white">
         <span className="mr-2">社群Follow：</span>
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
           {icons.facebook}
         </a>
       </div>
       {/* Main Navbar */}
-      <nav className="w-full border-b bg-[#e5ded3] sticky top-0 z-50">
+      <nav className="w-full border-b bg-[#e5ded3] sticky top-0 z-50 h-18 flex items-center">
         <div className="container mx-auto flex items-center justify-between py-2 px-4">
           {/* LOGO */}
           <div className="flex-1 min-w-[120px] flex items-center">
-            <img src="/logo.svg" alt="logo" className="h-10 w-auto" />
+            <img src="/logo_navbar.png" alt="logo" className="h-10 w-auto" />
           </div>
           {/* Menu */}
           <div className="flex-[2] flex items-center justify-center">
