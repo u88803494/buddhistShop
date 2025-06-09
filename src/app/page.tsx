@@ -1,7 +1,7 @@
-import HeroCarousel from "@/app/components/HeroCarousel";
+import HeaderCarousel from "@/app/components/HeaderCarousel";
 
 export default function Home() {
   return (
-      <HeroCarousel />
+      <HeaderCarousel />
   );
 }
