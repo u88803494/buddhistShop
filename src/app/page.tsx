@@ -1,7 +1,7 @@
+import HeroCarousel from "@/app/components/HeroCarousel";
+
 export default function Home() {
   return (
-    <div>
-        home page
-    </div>
+      <HeroCarousel />
   );
 }
