@@ -1,7 +1,17 @@
+import React, { useState } from "react";
 import ProductCard from "@/components/ProductCard";
+import ProductTabs, { ProductCategory } from "@/components/ProductTabs";
 import { products } from "@/mockData/products";
 
 const HotProductsSection = () => {
+  const [activeCategory, setActiveCategory] = useState<ProductCategory>('all');
+
+  const filteredProducts = activeCategory === 'all' 
+    ? products.slice(0, 6) 
+    : products
+        .filter(product => product.category.toLowerCase() === activeCategory)
+        .slice(0, 6);
+
   return (
     <>
       {/* 上方灰色區塊 */}
@@ -18,7 +28,10 @@ const HotProductsSection = () => {
         {/* 上方標題 */}
         <div className="mb-8 flex justify-between items-center">
           <div className="text-2xl font-bold text-[#A29380]">熱賣商品</div>
-          <div>tab</div>
+          <ProductTabs 
+            onCategoryChange={(category) => setActiveCategory(category)}
+            activeCategory={activeCategory}
+          />
         </div>
 
         {/* 商品內容 */}
@@ -27,7 +40,7 @@ const HotProductsSection = () => {
             <img src="/images/jing_si.png" alt="" style={{ width: "100%", height: "100%" }} />
           </div>
           <div className="grid grid-cols-3 gap-x-6 gap-y-8 max-w-[963px]">
-            {products.slice(0, 6).map((product) => (
+            {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 image={product.image}
