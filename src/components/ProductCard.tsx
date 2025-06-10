@@ -12,20 +12,24 @@ interface ProductCardProps {
 const ProductCard = ({ height, image, price, specialPrice, title, width }: ProductCardProps) => {
   return (
     <div
-      className=""
+      className="bg-white overflow-hidden"
       style={{
         height: `${height}px`,
         width: `${width}px`,
       }}
     >
-      <div>
-        <img src={image} alt="" />
+      <div className="relative w-full mb-3">
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-full h-auto object-cover"
+        />
       </div>
-      <div>
-        <p>{title}</p>
-        <div>
-          <p>{price}</p>
-          <p>{specialPrice}</p>
+      <div className="space-y-1">
+        <p className="text-[#545454] text-center line-clamp-2">{title}</p>
+        <div className="flex items-center justify-center space-x-1">
+          <p className="text-[#939295] line-through text-sm">{price}</p>
+          <p className="text-[#930000] text-base">{specialPrice}</p>
         </div>
       </div>
     </div>
