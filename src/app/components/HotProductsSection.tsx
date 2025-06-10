@@ -1,3 +1,5 @@
+import ProductCard from "@/components/ProductCard"
+import { products } from "@/mockData/products"
 
 const HotProductsSection = () => {
   return (
@@ -26,15 +28,24 @@ const HotProductsSection = () => {
         </div>
 
         {/* 商品內容 */}
-        <div className="flex justify-between items-center">
-          <div className="">
-            <img src="/images/jing_si.png" alt="" />
+        <div className="flex">
+          <div className="mr-6" style={{ width: '456px', height: '884px' }}>
+            <img src="/images/jing_si.png" alt="" style={{ width: '100%', height: '100%' }} />
           </div>
-          <div>
-            產品系列
+          <div className="grid grid-cols-3 gap-x-6 gap-y-8 max-w-[963px]">
+            {products.slice(0, 6).map((product) => (
+              <ProductCard
+                key={product.id}
+                image={product.image}
+                title={product.name}
+                price={product.price}
+                specialPrice={product.specialPrice}
+                width="296"
+                height="420"
+              />
+            ))}
           </div>
         </div>
-        123
       </div>
     </>
   )
