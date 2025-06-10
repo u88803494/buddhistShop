@@ -1,5 +1,4 @@
 interface ProductCardProps {
-  height: string;
   image: string;
   price: string;
   specialPrice: string;
@@ -7,12 +6,11 @@ interface ProductCardProps {
   width: string;
 }
 
-const ProductCard = ({ height, image, price, specialPrice, title, width }: ProductCardProps) => {
+const ProductCard = ({ image, price, specialPrice, title, width }: ProductCardProps) => {
   return (
     <div
-      className=" flex flex-col items-center justify-between bg-white overflow-hidden"
+      className="flex flex-col items-center justify-between bg-white overflow-hidden"
       style={{
-        height: `${height}px`,
         width: `${width}px`,
       }}
     >
