@@ -49,7 +49,9 @@ const Footer = () => {
               <ul className="space-y-2">
                 {col.items.map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} className="text-white/90 hover:text-white text-sm transition-colors">{item.label}</a>
+                    <a href={item.href} className="text-white/90 hover:text-white text-sm transition-colors">
+                      {item.label}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -59,11 +61,12 @@ const Footer = () => {
       </div>
       {/* 底部深色區塊 */}
       <div className="w-full bg-[#595652] text-white text-xs text-center py-4 px-2">
-        慈濟文化志業慈善香港有限公司 TZU CHI CULTURAL MISSION HONG KONG Ltd.<br />
+        慈濟文化志業慈善香港有限公司 TZU CHI CULTURAL MISSION HONG KONG Ltd.
+        <br />
         香港靜思小築線上購物平台，有權決定商品、核售、修改或暫停活動，亦有相關活動事項做出最終解釋
       </div>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;

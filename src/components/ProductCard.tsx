@@ -9,14 +9,7 @@ interface ProductCardProps {
   width: string;
 }
 
-const ProductCard = ({
-  height,
-  image,
-  price,
-  specialPrice,
-  title,
-  width,
-}: ProductCardProps) => {
+const ProductCard = ({ height, image, price, specialPrice, title, width }: ProductCardProps) => {
   return (
     <div
       className=""
@@ -36,7 +29,7 @@ const ProductCard = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;

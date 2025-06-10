@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,7 +10,7 @@ const banners = [
   {
     image: "/images/2025_03_01-05_15.png",
   },
-  {  
+  {
     image: "/images/2025_03_01-05_15.png",
   },
 ];
@@ -43,4 +43,4 @@ const HeroCarousel = () => {
   );
 };
 
-export default HeroCarousel; 
+export default HeroCarousel;
