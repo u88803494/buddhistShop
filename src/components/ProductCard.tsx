@@ -16,12 +16,9 @@ const ProductCard = ({ height, image, price, specialPrice, title, width }: Produ
         width: `${width}px`,
       }}
     >
+      {/* TODO: Hover detail */}
       <div className="relative w-full mb-3">
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-auto object-cover"
-        />
+        <img src={image} alt={title} className="w-full h-auto object-cover" />
       </div>
       <div className="space-y-1">
         <p className="text-[#545454] text-center line-clamp-2">{title}</p>

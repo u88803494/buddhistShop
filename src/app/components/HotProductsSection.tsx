@@ -9,11 +9,10 @@ import { products } from "@/mockData/products";
 const HotProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState<ProductCategory>(ProductCategory.All);
 
-  const filteredProducts = activeCategory === ProductCategory.All 
-    ? products.slice(0, 6) 
-    : products
-        .filter(product => product.category.toLowerCase() === activeCategory)
-        .slice(0, 6);
+  const filteredProducts =
+    activeCategory === ProductCategory.All
+      ? products.slice(0, 6)
+      : products.filter((product) => product.category.toLowerCase() === activeCategory).slice(0, 6);
 
   return (
     <>
@@ -31,10 +30,7 @@ const HotProductsSection = () => {
         {/* 上方標題 */}
         <div className="mb-8 flex justify-between items-center">
           <div className="text-2xl font-bold text-[#A29380]">熱賣商品</div>
-          <ProductTabs 
-            onCategoryChange={(category) => setActiveCategory(category)}
-            activeCategory={activeCategory}
-          />
+          <ProductTabs onCategoryChange={(category) => setActiveCategory(category)} activeCategory={activeCategory} />
         </div>
 
         {/* 商品內容 */}
