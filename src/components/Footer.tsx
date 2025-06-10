@@ -38,7 +38,7 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center px-4 pb-6">
         {/* LOGO 與公司名稱 */}
         <div className="flex flex-col items-center md:items-start w-full md:w-1/3 mb-8 md:mb-0">
-          <img src="/logo_footer.png" alt="logo" className="h-16 mb-2" />
+          <img src="images/logo_footer.png" alt="logo" className="h-16 mb-2" />
           <div className="text-white text-lg font-semibold tracking-wide">靜思人文股份有限公司</div>
         </div>
         {/* 連結區塊 */}

@@ -8,10 +8,10 @@ import "swiper/css/pagination";
 
 const banners = [
   {
-    image: "/2025_03_01-05_15.png",
+    image: "/images/2025_03_01-05_15.png",
   },
   {  
-    image: "/2025_03_01-05_15.png",
+    image: "/images/2025_03_01-05_15.png",
   },
 ];
 

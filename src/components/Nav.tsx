@@ -75,7 +75,7 @@ const Nav = () => {
         <div className="container mx-auto flex items-center justify-between py-2 px-2">
           {/* LOGO */}
           <div className="flex-1 min-w-[80px] flex items-center">
-            <img src="/logo_navbar.png" alt="logo" className="h-8 w-auto" />
+            <img src="images/logo_navbar.png" alt="logo" className="h-8 w-auto" />
           </div>
           {/* Desktop Menu */}
           <div className="flex-[2] items-center justify-center hidden md:flex">

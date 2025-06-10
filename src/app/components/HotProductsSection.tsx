@@ -1,4 +1,3 @@
-import ProductCard from "../../components/ProductCard"
 
 const HotProductsSection = () => {
   return (
@@ -15,10 +14,12 @@ const HotProductsSection = () => {
       </div>
 
       {/* 下方白色區塊 */}
-      <div className=" mx-20 my-auto max-w-[1417px] w-full">
+      <div className=" my-20 mx-auto max-w-[1417px] w-full">
         {/* 上方標題 */}
-        <div className="flex justify-between items-center">
+        <div className="mb-8 flex justify-between items-center">
+          <div className="text-2xl font-bold text-[#A29380]">
           熱賣商品
+          </div>
           <div>
             tab
           </div>
@@ -26,12 +27,11 @@ const HotProductsSection = () => {
 
         {/* 商品內容 */}
         <div className="flex justify-between items-center">
-          <div className="border-2 border-red-500">
-            靜思淨斯產品系列
+          <div className="">
+            <img src="/images/jing_si.png" alt="" />
           </div>
           <div>
             產品系列
-            <ProductCard image="/images/product1.png" name="產品1" price={100} />
           </div>
         </div>
         123
