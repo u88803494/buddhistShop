@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-
-export type ProductCategory = 'all' | 'books' | 'goods' | 'media';
+import clsx from 'clsx';
+import { ProductCategory, ProductCategoryLabels } from '@/types/product';
 
 interface ProductTabsProps {
   onCategoryChange: (category: ProductCategory) => void;
@@ -9,30 +8,25 @@ interface ProductTabsProps {
 
 const ProductTabs: React.FC<ProductTabsProps> = ({ 
   onCategoryChange, 
-  activeCategory = 'all' 
+  activeCategory = ProductCategory.All 
 }) => {
-  const categories: { key: ProductCategory; label: string }[] = [
-    { key: 'all', label: '全部' },
-    { key: 'books', label: '書籍' },
-    { key: 'goods', label: '百貨' },
-    { key: 'media', label: '影音' }
-  ];
+  const categories = Object.values(ProductCategory);
 
   return (
-    <div className="flex space-x-4">
+    <div className="flex space-x-8">
       {categories.map((category) => (
-        <button
-          key={category.key}
-          onClick={() => onCategoryChange(category.key)}
-          className={`
-            px-4 py-2 rounded-lg transition-colors duration-300
-            ${activeCategory === category.key 
-              ? 'bg-[#A29380] text-white' 
-              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}
-          `}
+        <div
+          key={category}
+          onClick={() => onCategoryChange(category)}
+          className={clsx(
+            'pb-2 cursor-pointer text-[#787777]',
+            {
+              'text-[#A29380] border-b-1 border-[#A29380]': activeCategory === category,
+            }
+          )}
         >
-          {category.label}
-        </button>
+          {ProductCategoryLabels[category]}
+        </div>
       ))}
     </div>
   );

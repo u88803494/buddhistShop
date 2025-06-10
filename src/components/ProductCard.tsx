@@ -1,5 +1,3 @@
-import { clsx } from "clsx";
-
 interface ProductCardProps {
   height: string;
   image: string;

@@ -1,12 +1,15 @@
+"use client";
+
 import React, { useState } from "react";
 import ProductCard from "@/components/ProductCard";
-import ProductTabs, { ProductCategory } from "@/components/ProductTabs";
+import ProductTabs from "@/components/ProductTabs";
+import { ProductCategory } from "@/types/product";
 import { products } from "@/mockData/products";
 
 const HotProductsSection = () => {
-  const [activeCategory, setActiveCategory] = useState<ProductCategory>('all');
+  const [activeCategory, setActiveCategory] = useState<ProductCategory>(ProductCategory.All);
 
-  const filteredProducts = activeCategory === 'all' 
+  const filteredProducts = activeCategory === ProductCategory.All 
     ? products.slice(0, 6) 
     : products
         .filter(product => product.category.toLowerCase() === activeCategory)

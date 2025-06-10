@@ -1,3 +1,5 @@
+import { ProductCategory } from "@/types/product";
+
 export const products = [
   {
     id: 1,
@@ -5,7 +7,7 @@ export const products = [
     price: "$420",
     specialPrice: "HK$336",
     image: "/images/books/001.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
   {
     id: 2,
@@ -13,7 +15,7 @@ export const products = [
     price: "$378",
     specialPrice: "HK$302",
     image: "/images/books/002.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
   {
     id: 3,
@@ -21,7 +23,7 @@ export const products = [
     price: "$450",
     specialPrice: "HK$360",
     image: "/images/grocery/001.png",
-    category: "百貨",
+    category: ProductCategory.Grocery,
   },
   {
     id: 4,
@@ -29,7 +31,7 @@ export const products = [
     price: "$420",
     specialPrice: "HK$336",
     image: "/images/books/003.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
   {
     id: 5,
@@ -37,7 +39,7 @@ export const products = [
     price: "$378",
     specialPrice: "HK$302",
     image: "/images/grocery/002.png",
-    category: "百貨",
+    category: ProductCategory.Grocery,
   },
   {
     id: 6,
@@ -45,7 +47,7 @@ export const products = [
     price: "$420",
     specialPrice: "HK$336",
     image: "/images/books/004.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
   {
     id: 7,
@@ -53,7 +55,7 @@ export const products = [
     price: "$320",
     specialPrice: "HK$256",
     image: "/images/grocery/003.png",
-    category: "百貨",
+    category: ProductCategory.Grocery,
   },
   {
     id: 8,
@@ -61,7 +63,7 @@ export const products = [
     price: "$378",
     specialPrice: "HK$302",
     image: "/images/books/001.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
   {
     id: 9,
@@ -69,7 +71,7 @@ export const products = [
     price: "$250",
     specialPrice: "HK$200",
     image: "/images/grocery/004.png",
-    category: "百貨",
+    category: ProductCategory.Grocery,
   },
   {
     id: 10,
@@ -77,7 +79,7 @@ export const products = [
     price: "$420",
     specialPrice: "HK$336",
     image: "/images/books/002.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
   {
     id: 11,
@@ -85,7 +87,7 @@ export const products = [
     price: "$280",
     specialPrice: "HK$224",
     image: "/images/grocery/001.png",
-    category: "百貨",
+    category: ProductCategory.Grocery,
   },
   {
     id: 12,
@@ -93,7 +95,7 @@ export const products = [
     price: "$378",
     specialPrice: "HK$302",
     image: "/images/books/003.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
   {
     id: 13,
@@ -101,7 +103,7 @@ export const products = [
     price: "$220",
     specialPrice: "HK$176",
     image: "/images/grocery/002.png",
-    category: "百貨",
+    category: ProductCategory.Grocery,
   },
   {
     id: 14,
@@ -109,7 +111,7 @@ export const products = [
     price: "$420",
     specialPrice: "HK$336",
     image: "/images/books/004.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
   {
     id: 15,
@@ -117,7 +119,7 @@ export const products = [
     price: "$300",
     specialPrice: "HK$240",
     image: "/images/grocery/003.png",
-    category: "百貨",
+    category: ProductCategory.Grocery,
   },
   {
     id: 16,
@@ -125,7 +127,7 @@ export const products = [
     price: "$378",
     specialPrice: "HK$302",
     image: "/images/books/001.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
   {
     id: 17,
@@ -133,7 +135,7 @@ export const products = [
     price: "$350",
     specialPrice: "HK$280",
     image: "/images/grocery/004.png",
-    category: "百貨",
+    category: ProductCategory.Grocery,
   },
   {
     id: 18,
@@ -141,7 +143,7 @@ export const products = [
     price: "$420",
     specialPrice: "HK$336",
     image: "/images/books/002.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
   {
     id: 19,
@@ -149,7 +151,7 @@ export const products = [
     price: "$400",
     specialPrice: "HK$320",
     image: "/images/grocery/001.png",
-    category: "百貨",
+    category: ProductCategory.Grocery,
   },
   {
     id: 20,
@@ -157,6 +159,6 @@ export const products = [
     price: "$378",
     specialPrice: "HK$302",
     image: "/images/books/003.png",
-    category: "書籍",
+    category: ProductCategory.Books,
   },
 ];
