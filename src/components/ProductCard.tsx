@@ -10,7 +10,7 @@ interface ProductCardProps {
 const ProductCard = ({ height, image, price, specialPrice, title, width }: ProductCardProps) => {
   return (
     <div
-      className="bg-white overflow-hidden"
+      className=" flex flex-col items-center justify-between bg-white overflow-hidden"
       style={{
         height: `${height}px`,
         width: `${width}px`,
