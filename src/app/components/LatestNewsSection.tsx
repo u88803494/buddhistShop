@@ -21,26 +21,29 @@ const LatestNewsSection = () => {
       </div>
 
       {/* 下方白色區塊 */}
-      <div className="my-20 mx-auto max-w-[1417px] w-full">
-        {/* 上方標題 */}
-        <div className="mb-6 flex justify-between items-center">
-          <div className="text-2xl font-bold text-[#A29380]">熱賣商品</div>
-          <div>左右切按鈕</div>
+      <div className="relative">
+        <div className="mt-20 mx-auto pb-20 max-w-[1417px] w-full">
+          {/* 上方標題 */}
+          <div className="mb-6 flex justify-between items-center">
+            <div className="text-2xl font-bold text-[#A29380]">熱賣商品</div>
+            <div>左右切按鈕</div>
+          </div>
+
+          {/* 活動內容 */}
+          <div className="flex justify-between">
+            <div className="">
+              <div className="mb-[222px]">用兩小時，學一生智慧</div>
+              <div>
+                <button className="w-[136px] h-[35px] bg-[#545454] text-white px-4 py-2">瞭解更多</button>
+              </div>
+            </div>
+            <div className="mt-2">活動內容 * 3</div>
+          </div>
         </div>
 
-        {/* 活動內容 */}
-        <div className="flex justify-between">
-          <div className="">
-            <div className="mb-[222px]">
-            用兩小時，學一生智慧
-            </div>
-            <div>
-              <button className="w-[136px] h-[35px] bg-[#545454] text-white px-4 py-2">瞭解更多</button>
-            </div>
-          </div>
-          <div className="mt-2">
-            活動內容 * 3
-          </div>
+        {/* 背景圖片 */}
+        <div className="absolute inset-0 z-0">
+          <img src="/images/mountains_background.png" alt="背景圖片" className="w-full h-full" />
         </div>
       </div>
     </div>
