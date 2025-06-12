@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import clsx from "clsx";
 
 const filterOptions = [
   { label: "精選商品", value: "featured" },
@@ -18,14 +19,26 @@ const ProductListHeader: React.FC<ProductListHeaderProps> = ({ totalProducts }) 
   const [selectedFilter, setSelectedFilter] = useState(filterOptions[0]);
 
   return (
-    <div className="flex items-center justify-between mb-6 relative text-sm">
+    <div className={clsx(
+      "flex flex-col sm:flex-row",
+      "items-start sm:items-center",
+      "justify-between",
+      "mb-6 relative text-sm"
+    )}>
       {/* 總商品數量計算 */}
-      <span className="text-[#545454]">共 {totalProducts} 項商品</span>
+      <span className={clsx(
+        "text-[#545454]",
+        "mb-2 sm:mb-0"
+      )}>共 {totalProducts} 項商品</span>
 
       {/* 下拉選單 */}
       <div className="relative inline-block w-[108px]">
         <div
-          className="flex items-center justify-between border border-[#B7AFA3] px-3 py-2 cursor-pointer"
+          className={clsx(
+            "flex items-center justify-between",
+            "border border-[#B7AFA3]",
+            "px-3 py-2 cursor-pointer"
+          )}
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="text-[#545454]">{selectedFilter.label}</span>
@@ -39,18 +52,29 @@ const ProductListHeader: React.FC<ProductListHeaderProps> = ({ totalProducts }) 
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={`transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+            className={clsx(
+              "transition-transform duration-300",
+              isOpen ? "rotate-180" : "rotate-0"
+            )}
           >
             <path d="m6 9 6 6 6-6" />
           </svg>
         </div>
 
         {isOpen && (
-          <ul className="absolute z-10 w-full border border-[#B7AFA3] mt-1 bg-white shadow-lg">
+          <ul className={clsx(
+            "absolute z-10 w-full",
+            "border border-[#B7AFA3]",
+            "mt-1 bg-white shadow-lg"
+          )}>
             {filterOptions.map((option) => (
               <li
                 key={option.value}
-                className="px-3 py-2 hover:bg-[#F5F5F5] cursor-pointer text-[#545454]"
+                className={clsx(
+                  "px-3 py-2",
+                  "hover:bg-[#F5F5F5]",
+                  "cursor-pointer text-[#545454]"
+                )}
                 onClick={() => {
                   setSelectedFilter(option);
                   setIsOpen(false);

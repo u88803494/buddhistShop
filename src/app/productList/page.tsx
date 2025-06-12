@@ -6,6 +6,7 @@ import CategorySidebar from "./components/CategorySidebar";
 import ProductListHeader from "./components/ProductListHeader";
 import ProductGrid from "./components/ProductGrid";
 import ProductPagination from "./components/ProductPagination";
+import clsx from "clsx";
 
 const productListPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -21,20 +22,18 @@ const productListPage = () => {
   const pagedProducts = filteredProducts.slice((page - 1) * pageSize, page * pageSize);
 
   return (
-    <div className="flex min-h-screen">
-      {/* 左側分類選單 */}
-      <div className="mt-8 mr-20">
-        <CategorySidebar />
-      </div>
-
-      {/* 右側產品列表區域 */}
-      <main className="mt-[86px] flex-1">
+    <div className={clsx(
+      "flex flex-col sm:flex-row",
+      "min-h-screen"
+    )}>
+      <CategorySidebar />
+      <main className={clsx(
+        "mt-4 sm:mt-[86px]",
+        "flex-1",
+        "px-5 sm:px-0"
+      )}>
         <ProductListHeader totalProducts={filteredProducts.length} />
-
-        {/* 產品格狀列表 */}
         <ProductGrid products={pagedProducts} />
-
-        {/* 分頁 */}
         <div className="my-20">
           <ProductPagination currentPage={page} totalPages={totalPage} onPageChange={setPage} />
         </div>

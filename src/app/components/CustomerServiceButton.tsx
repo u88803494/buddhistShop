@@ -14,7 +14,8 @@ const CustomerServiceButton = () => {
         "fixed z-50 right-0 bottom-[560px]",
         "flex flex-col items-center",
         "bg-[#F2F2F2]",
-        "w-14 px-4 py-3"
+        "w-14 px-4 py-3",
+        "hidden sm:flex"
       )}
     >
       {/* 聯絡客服 直式文字 */}
