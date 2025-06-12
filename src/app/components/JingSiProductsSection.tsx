@@ -19,9 +19,23 @@ const JingSiProductsSection = () => {
   return (
     <>
       {/* 上方灰色區塊 */}
-      <div className="w-full h-[310px] bg-[#F2F2F2] flex flex-col items-center justify-center gap-2">
-        <h3 className="mb-8 text-2xl text-[#545454]">「靜思」緣起</h3>
-        <div className="flex flex-col items-center justify-center text-sm text-[#939295]">
+      <div className="relative w-full h-[310px] bg-[#F2F2F2] flex flex-col items-center justify-center gap-2">
+        {/* 左側裝飾圖 */}
+        <img 
+          src="/images/jing_si_clip_left.png" 
+          alt="Left Decoration" 
+          className="absolute left-0 top-0 h-full object-contain"
+        />
+        
+        {/* 右側裝飾圖 */}
+        <img 
+          src="/images/jing_si_clip_right.png" 
+          alt="Right Decoration" 
+          className="absolute right-0 top-0 h-full object-contain"
+        />
+
+        <h3 className="mb-8 text-2xl text-[#545454] z-10">「靜思」緣起</h3>
+        <div className="flex flex-col items-center justify-center text-sm text-[#939295] z-10">
           <p className="max-w-[968px]">
             原來，一個心念，有無盡的力量……證嚴法師出家前自號「靜思」，乃為提醒自己，時時刻刻靜心思考人生方向，蘊育了慈濟的根本思想、靜思文化的由來。
           </p>
