@@ -13,26 +13,27 @@ const ProductPagination: React.FC<ProductPaginationProps> = ({
 }) => {
   // 生成要顯示的頁碼
   const generatePageNumbers = () => {
-    
-    // 總是顯示第一頁和最後一頁
+    // 如果總頁數小於等於 7，直接顯示所有頁碼
     if (totalPages <= 7) {
-      // 如果頁數少於等於7，全部顯示
       return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
 
-    // 複雜的分頁邏輯
+    // 使用展開運算符創建新數組，避免直接修改
+    let pages: (number | string)[] = [1];
+
+    // 根據當前頁面位置，決定中間顯示的頁碼
     if (currentPage <= 4) {
-      // 如果在前4頁
-      return [1, 2, 3, 4, 5, '...', totalPages];
+      // 當前頁在前四頁
+      pages = [...pages, 2, 3, 4, 5, '...', totalPages];
+    } else if (currentPage >= totalPages - 3) {
+      // 當前頁在最後四頁
+      pages = [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+    } else {
+      // 當前頁在中間
+      pages = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
     }
 
-    if (currentPage >= totalPages - 3) {
-      // 如果在最後4頁
-      return [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
-    }
-
-    // 中間的情況
-    return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+    return pages;
   };
 
   const pageNumbers = generatePageNumbers();
