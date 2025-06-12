@@ -104,9 +104,9 @@ const LatestNewsSection = () => {
       <div className="relative">
         <div className="z-10 mt-20 mx-auto pb-20 max-w-[1417px] w-full">
           {/* 上方標題 */}
-          <div className="mb-6 flex justify-between items-center">
-            <div className="text-2xl font-bold text-[#A29380]">最新活動</div>
-            <div>
+          <div className="mb-6 flex flex-col sm:flex-row justify-between items-center">
+            <div className="text-2xl font-bold text-[#A29380] mb-4 sm:mb-0">最新活動</div>
+            <div className="hidden sm:block">
               <button onClick={handlePrevPage} className="p-2">
                 <img src="/images/icons/nav_left_arrow.png" alt="nav_left_arrow" />
               </button>
@@ -117,7 +117,18 @@ const LatestNewsSection = () => {
           </div>
 
           {/* 活動內容 */}
-          <div className="flex justify-between">
+          {/* 手機版：橫向滑動 */}
+          <div className="sm:hidden w-full px-2 overflow-x-auto pb-2">
+            <div className="flex flex-row flex-nowrap gap-4">
+              {activityList.map((activity) => (
+                <div key={activity.id} className="min-w-[335px]">
+                  <ActivityCard activity={activity} />
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* 桌機版：原本分頁 */}
+          <div className="hidden sm:flex justify-between">
             <div className="">
               <div className="mb-[222px]">用兩小時，學一生智慧</div>
               <div>
