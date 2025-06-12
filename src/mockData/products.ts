@@ -1,6 +1,7 @@
 import { ProductCategory } from "@/types/product";
+import { Product } from "@/types/product";
 
-export const products = [
+export const products: Product[] = [
   {
     id: 1,
     name: "【新品上市】以愛織夢─靜思閱讀書軒的美與善與智慧之光",
@@ -161,4 +162,70 @@ export const products = [
     image: "/images/books/003.png",
     category: ProductCategory.Books,
   },
+  ...Array.from({ length: 100 }, (_, i) => {
+    const categories = [
+      ProductCategory.Books,
+      ProductCategory.Grocery,
+      ProductCategory.Books,
+      ProductCategory.Grocery
+    ];
+
+    const bookNames = [
+      "靜思人文探索",
+      "心靈成長之旅",
+      "智慧之光",
+      "生命的意義",
+      "文學與哲學",
+      "教育的力量",
+      "藝術與心靈",
+      "生活智慧錄",
+      "紀實文學選",
+      "靈性成長指南"
+    ];
+
+    const groceryNames = [
+      "手工藝品精選",
+      "環保生活用品",
+      "文創商品系列",
+      "季節特選禮盒",
+      "居家生活雜貨",
+      "健康養生套裝",
+      "手工皂禮盒",
+      "茶葉精選",
+      "天然調味品",
+      "生活美學用品"
+    ];
+
+    const category = categories[i % 4];
+    const basePrice = Math.floor(Math.random() * 300) + 200;
+    const specialDiscount = Math.floor(basePrice * 0.8);
+
+    const bookImages = [
+      "/images/books/001.png",
+      "/images/books/002.png", 
+      "/images/books/003.png", 
+      "/images/books/004.png"
+    ];
+
+    const groceryImages = [
+      "/images/grocery/001.png",
+      "/images/grocery/002.png", 
+      "/images/grocery/003.png", 
+      "/images/grocery/004.png",
+      "/images/grocery/005.png"
+    ];
+
+    return {
+      id: i + 21,
+      name: category === ProductCategory.Books 
+        ? `【靜思文集】${bookNames[i % bookNames.length]}` 
+        : `【生活選品】${groceryNames[i % groceryNames.length]}`,
+      price: `$${basePrice}`,
+      specialPrice: `HK$${specialDiscount}`,
+      image: category === ProductCategory.Books 
+        ? bookImages[i % bookImages.length]
+        : groceryImages[i % groceryImages.length],
+      category: category
+    };
+  })
 ];
