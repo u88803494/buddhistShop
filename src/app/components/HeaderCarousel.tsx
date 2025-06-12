@@ -32,7 +32,6 @@ const HeroCarousel = () => {
                 src={banner?.image ?? ""}
                 alt={banner?.image ?? ""}
                 fill
-                className="object-cover"
                 priority={idx === 0}
               />
             </div>
