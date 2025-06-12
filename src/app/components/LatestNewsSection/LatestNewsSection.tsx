@@ -86,13 +86,18 @@ const LatestNewsSection = () => {
   return (
     <div className="w-full">
       {/* 上方灰色區塊 */}
-      <div className="w-full h-[376px] bg-[#F2F2F2] flex items-center justify-center gap-x-6">
-        {Items.map((item) => (
-          <div key={item.id} className="w-[216px] h-[216px] flex flex-col items-center justify-center bg-[#D5D5D5]">
-            <img src={item.icon} alt={item.name} className="w-20 h-20 mb-4" />
-            <span className="text-lg font-bold text-[#787777]">{item.name}</span>
-          </div>
-        ))}
+      <div className="w-full bg-[#F2F2F2] px-5 sm:px-0 py-6">
+        <div className="grid grid-cols-3 gap-4 sm:flex sm:items-center sm:justify-center sm:gap-x-6">
+          {Items.map((item) => (
+            <div
+              key={item.id}
+              className="flex flex-col items-center justify-center bg-[#D5D5D5] w-full h-[100px] sm:w-[216px] sm:h-[216px]"
+            >
+              <img src={item.icon} alt={item.name} className="w-12 h-12 sm:w-20 sm:h-20 mb-2 sm:mb-4" />
+              <span className="text-base sm:text-lg font-bold text-[#787777]">{item.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* 下方白色區塊 */}
