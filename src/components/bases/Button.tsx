@@ -5,10 +5,10 @@ interface ButtonProps {
 
 const Button = ({ children, onClick }: ButtonProps) => {
   return (
-    <button
-    className="h-[35px] w-40 text-[#A29380] border border-[#A29380]"
-      onClick={onClick}>{children}</button>
-  )
-}
+    <button className="h-[35px] w-40 text-[#A29380] border border-[#A29380]" onClick={onClick}>
+      {children}
+    </button>
+  );
+};
 
-export default Button
+export default Button;

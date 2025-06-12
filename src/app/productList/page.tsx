@@ -1,7 +1,5 @@
 const productListPage = () => {
-  return (
-    <div>productListPage</div>
-  )
-}
+  return <div>productListPage</div>;
+};
 
-export default productListPage
+export default productListPage;
