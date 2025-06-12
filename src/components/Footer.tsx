@@ -35,14 +35,16 @@ const footerLinks = [
 const Footer = () => {
   return (
     <footer className="w-full bg-[#a89e8a] pt-8">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center px-4 pb-6">
+      <div
+        className="flex flex-col items-center px-4 pb-6 w-full max-w-[1200px] mx-auto md:flex-row md:items-center md:justify-between"
+      >
         {/* LOGO 與公司名稱 */}
-        <div className="flex flex-col items-center md:items-start w-full md:w-1/3 mb-8 md:mb-0">
+        <div className="flex flex-col items-center mb-8 w-full md:mb-0 md:items-start md:w-1/3">
           <img src="images/logo_footer.png" alt="logo" className="h-16 mb-2" />
           <div className="text-white text-lg font-semibold tracking-wide">靜思人文股份有限公司</div>
         </div>
         {/* 連結區塊 */}
-        <div className="flex flex-1 w-full md:w-2/3 justify-between gap-8">
+        <div className="flex flex-col gap-8 w-full md:flex-row md:w-2/3 md:justify-between">
           {footerLinks.map((col) => (
             <div key={col.title} className="min-w-[120px]">
               <div className="text-white text-base font-bold mb-3 border-b border-white/30 pb-1">{col.title}</div>
