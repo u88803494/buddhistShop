@@ -32,11 +32,11 @@ const productListPage = () => {
         <ProductListHeader totalProducts={filteredProducts.length} />
 
         {/* 產品格狀列表 */}
-          <ProductGrid products={pagedProducts} />
+        <ProductGrid products={pagedProducts} />
 
         {/* 分頁 */}
         <div className="my-20">
-        <ProductPagination currentPage={page} totalPages={totalPage} onPageChange={setPage} />
+          <ProductPagination currentPage={page} totalPages={totalPage} onPageChange={setPage} />
         </div>
       </main>
     </div>
