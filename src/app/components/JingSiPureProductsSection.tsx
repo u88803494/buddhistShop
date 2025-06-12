@@ -1,8 +1,5 @@
 "use client";
 
-import ProductTabs from "@/components/ProductTabs";
-import { useState } from "react";
-import { ProductCategory } from "@/types/product";
 import { products } from "@/mockData/products";
 import ProductCard from "@/components/ProductCard";
 import Button from "@/components/bases/Button";
@@ -10,12 +7,7 @@ import { useRouter } from "next/navigation";
 
 const JingSiProductsSection = () => {
   const router = useRouter();
-  const [activeCategory, setActiveCategory] = useState<ProductCategory>(ProductCategory.All);
 
-  const filteredProducts =
-    activeCategory === ProductCategory.All
-      ? products.slice(0, 4)
-      : products.filter((product) => product.category.toLowerCase() === activeCategory).slice(0, 4);
   return (
     <>
       {/* 上方灰色區塊 */}
@@ -52,25 +44,22 @@ const JingSiProductsSection = () => {
       {/* 下方白色區塊 */}
       <div className="my-20 mx-auto max-w-[1417px] w-full">
         {/* 上方標題 */}
-        <div className="mb-8 flex justify-between items-center">
-          <div className="text-2xl font-bold text-[#A29380]">靜思產品</div>
-          <ProductTabs onCategoryChange={(category) => setActiveCategory(category)} activeCategory={activeCategory} />
+        <div className="mb-8 flex items-center">
+          <div className="text-2xl font-bold text-[#A29380]">淨斯商品</div>
         </div>
 
         {/* 商品內容 */}
-        <div className="flex mb-15">
-          <div className="min-h-[472px] grid grid-cols-4 gap-x-6">
-            {filteredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                image={product.image}
-                title={product.name}
-                price={product.price}
-                specialPrice={product.specialPrice}
-                width="336"
-              />
-            ))}
-          </div>
+        <div className="mb-10 grid grid-cols-4 gap-x-6 gap-y-8">
+          {products.map((p) => (
+            <ProductCard
+              key={p.id}
+              image={p.image}
+              title={p.name}
+              price={p.price}
+              specialPrice={p.specialPrice}
+              width="336"
+            />
+          ))}
         </div>
 
         {/* 更多商品按鈕 */}
