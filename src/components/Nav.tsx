@@ -1,14 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
-  NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -72,6 +64,7 @@ const menuItems = [
 
 const Nav = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
     <>
@@ -91,37 +84,51 @@ const Nav = () => {
           </div>
           {/* Desktop Menu */}
           <div className="flex-[2] items-center justify-center hidden md:flex">
-            <NavigationMenu viewport={false}>
-              <NavigationMenuList>
-                {menuItems.map((item, idx) => (
-                  <NavigationMenuItem key={idx}>
-                    <NavigationMenuTrigger className="bg-transparent text-base font-medium px-3 py-2">
+            <ul className="flex space-x-4">
+              {menuItems.map((item, idx) => (
+                <li key={idx} className="relative group">
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveDropdown(item.title)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <button
+                      className="bg-transparent text-base font-medium px-3 py-2 flex items-center"
+                    >
                       {item.title}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[200px] gap-4">
-                        {item.links.map((link) => (
-                          <li key={link.label}>
-                            <NavigationMenuLink asChild>
+                      <svg
+                        className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {activeDropdown === item.title && (
+                      <div className="absolute top-full left-0 w-[200px] bg-white shadow-lg rounded-md py-2">
+                        <ul>
+                          {item.links.map((link) => (
+                            <li key={link.label}>
                               <Link
                                 href={link.href}
                                 className={clsx(
-                                  "text-[#787777] px-1 py-0.5",
+                                  "block px-4 py-2 text-[#787777]",
                                   "hover:text-[#A29380] hover:underline hover:bg-transparent",
-                                  "underline-offset-4  transition-colors duration-150"
+                                  "underline-offset-4 transition-colors duration-150"
                                 )}
                               >
                                 {link.label}
                               </Link>
-                            </NavigationMenuLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
           {/* Icons + Hamburger */}
           <div className="flex-1 min-w-[80px] flex items-center justify-end gap-4">
