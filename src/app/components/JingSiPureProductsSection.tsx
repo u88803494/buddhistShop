@@ -12,13 +12,15 @@ const JingSiProductsSection = () => {
   return (
     <>
       {/* 上方灰色區塊 */}
-      <div className={clsx(
-        "relative w-full h-auto min-h-[500px] sm:h-[350px]", 
-        "bg-[#F2F2F2]", 
-        "flex items-center justify-center", 
-        "overflow-hidden", 
-        "py-8 sm:py-0"
-      )}>
+      <div
+        className={clsx(
+          "relative w-full h-auto min-h-[500px] sm:h-[350px]",
+          "bg-[#F2F2F2]",
+          "flex items-center justify-center",
+          "overflow-hidden",
+          "py-8 sm:py-0"
+        )}
+      >
         {/* 左上圓形裝飾 - 只在桌面版顯示 */}
         <img
           src="/images/jing_si_prue_cycle_left.png"
@@ -83,13 +85,7 @@ const JingSiProductsSection = () => {
           <div className="flex flex-row flex-nowrap gap-4">
             {products.slice(0, 12).map((p) => (
               <div key={p.id} className="min-w-[280px]">
-                <ProductCard
-                  image={p.image}
-                  title={p.name}
-                  price={p.price}
-                  specialPrice={p.specialPrice}
-                  width="280"
-                />
+                <ProductCard image={p.image} title={p.name} price={p.price} specialPrice={p.specialPrice} width="280" />
               </div>
             ))}
           </div>

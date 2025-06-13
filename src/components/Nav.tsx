@@ -25,8 +25,13 @@ const icons = {
     </svg>
   ),
   facebook: (
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0" />
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M13.135 6H15V3H13.135C12.0369 3.00132 10.9841 3.43814 10.2076 4.21463C9.43114 4.99111 8.99432 6.04388 8.993 7.142V9H7V12H9V21.938H12V12H14.021L14.613 9H12V6.591C12.0023 6.43481 12.0655 6.28569 12.176 6.17532C12.2866 6.06496 12.4358 6.00207 12.592 6H13.135Z"
+        fill="white"
+      />
     </svg>
   ),
 };
@@ -70,10 +75,18 @@ const Nav = () => {
     <>
       {/* Top Bar */}
       <div className="w-full h-10 bg-[#a89e8a] flex items-center justify-end px-4 text-xs text-white">
-        <span className="mr-2">社群Follow：</span>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
-          {icons.facebook}
-        </a>
+        <div className="container mx-auto flex items-center justify-end h-full">
+          <span className="mr-2">社群Follow：</span>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-200 flex items-center"
+            style={{ lineHeight: 0 }}
+          >
+            {icons.facebook}
+          </a>
+        </div>
       </div>
       {/* Main Navbar */}
       <nav className="w-full border-b bg-[#e5ded3] sticky top-0 z-50 h-18 flex items-center">
@@ -92,9 +105,7 @@ const Nav = () => {
                     onMouseEnter={() => setActiveDropdown(item.title)}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <button
-                      className="bg-transparent text-base font-medium px-3 py-2 flex items-center"
-                    >
+                    <button className="bg-transparent text-base font-medium px-3 py-2 flex items-center">
                       {item.title}
                       <svg
                         className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180"
