@@ -44,35 +44,30 @@ const CategorySidebar = () => {
     <>
       {/* 手機版選單按鈕 */}
       <div className={clsx("mb-4 mx-5", "sm:hidden")}>
-        <button 
+        <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={clsx(
-            "w-full py-2 px-4",
-            "bg-[#F2F2F2] text-[#545454]",
-            "flex items-center justify-between"
-          )}
+          className={clsx("w-full py-2 px-4", "bg-[#F2F2F2] text-[#545454]", "flex items-center justify-between")}
         >
           <span>商品分類</span>
-          <span className={clsx(
-            "transition-transform duration-300",
-            isMobileMenuOpen ? "rotate-180" : ""
-          )}>▼</span>
+          <span className={clsx("transition-transform duration-300", isMobileMenuOpen ? "rotate-180" : "")}>▼</span>
         </button>
       </div>
 
       {/* 側邊欄 */}
-      <aside className={clsx(
-        // 手機版顯示邏輯
-        isMobileMenuOpen ? "block" : "hidden",
-        "sm:block",
-        // 寬度
-        "w-full",
-        "sm:w-56",
-        // 背景和高度
-        "bg-white h-fit select-none",
-        // 間距
-        "mx-5 sm:mx-0 sm:mt-8 sm:mr-20"
-      )}>
+      <aside
+        className={clsx(
+          // 手機版顯示邏輯
+          isMobileMenuOpen ? "block" : "hidden",
+          "sm:block",
+          // 寬度
+          "w-full",
+          "sm:w-56",
+          // 背景和高度
+          "bg-white h-fit select-none",
+          // 間距
+          "mx-5 sm:mx-0 sm:mt-8 sm:mr-20"
+        )}
+      >
         {/* 麵包屑 */}
         <div className="mb-8">
           <span className="text-[#A29380]">
@@ -104,13 +99,10 @@ const CategorySidebar = () => {
                     alt="展開/收合箭頭"
                     width={16}
                     height={16}
-                    className={clsx(
-                      "ml-2 transition-transform duration-300",
-                      {
-                        "rotate-0": openIdx === idx,
-                        "rotate-180": openIdx !== idx,
-                      }
-                    )}
+                    className={clsx("ml-2 transition-transform duration-300", {
+                      "rotate-0": openIdx === idx,
+                      "rotate-180": openIdx !== idx,
+                    })}
                   />
                 )}
               </button>

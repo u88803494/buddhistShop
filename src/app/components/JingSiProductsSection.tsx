@@ -48,7 +48,10 @@ const JingSiProductsSection = () => {
       <div className="my-20 mx-auto max-w-[1417px] w-full px-5 sm:px-0">
         {/* 上方標題與 Tabs */}
         <div className="mb-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-2xl font-bold text-[#A29380] text-center sm:text-left w-full">靜思產品<br className="sm:hidden" /></div>
+          <div className="text-2xl font-bold text-[#A29380] text-center sm:text-left w-full">
+            靜思產品
+            <br className="sm:hidden" />
+          </div>
           <ProductTabs onCategoryChange={(category) => setActiveCategory(category)} activeCategory={activeCategory} />
         </div>
 

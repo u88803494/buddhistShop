@@ -35,9 +35,7 @@ const footerLinks = [
 const Footer = () => {
   return (
     <footer className="w-full bg-[#a89e8a] pt-8">
-      <div
-        className="flex flex-col items-center px-4 pb-6 w-full max-w-[1200px] mx-auto md:flex-row md:items-center md:justify-between"
-      >
+      <div className="flex flex-col items-center px-4 pb-6 w-full max-w-[1200px] mx-auto md:flex-row md:items-center md:justify-between">
         {/* LOGO 與公司名稱 */}
         <div className="flex flex-col items-center mb-8 w-full md:mb-0 md:items-start md:w-1/3">
           <img src="images/logo_footer.png" alt="logo" className="h-16 mb-2" />

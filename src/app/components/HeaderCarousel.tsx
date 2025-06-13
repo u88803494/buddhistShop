@@ -28,12 +28,7 @@ const HeroCarousel = () => {
         {banners.map((banner, idx) => (
           <SwiperSlide key={idx}>
             <div className="relative w-full h-[180px] sm:h-[260px] md:h-[340px] lg:h-[480px]">
-              <Image
-                src={banner?.image ?? ""}
-                alt={banner?.image ?? ""}
-                fill
-                priority={idx === 0}
-              />
+              <Image src={banner?.image ?? ""} alt={banner?.image ?? ""} fill priority={idx === 0} />
             </div>
           </SwiperSlide>
         ))}

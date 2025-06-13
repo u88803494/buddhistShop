@@ -9,10 +9,7 @@ interface ProductGridProps {
 
 const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
   return (
-    <div className={clsx(
-      "grid grid-cols-1 sm:grid-cols-4",
-      "gap-4 sm:gap-6"
-    )}>
+    <div className={clsx("grid grid-cols-1 sm:grid-cols-4", "gap-4 sm:gap-6")}>
       {products.map((product) => (
         <ProductCard
           key={product.id}
