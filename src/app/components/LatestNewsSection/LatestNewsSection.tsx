@@ -86,15 +86,15 @@ const LatestNewsSection = () => {
   return (
     <div className="w-full">
       {/* 上方灰色區塊 */}
-      <div className="w-full bg-[#F2F2F2] px-5 sm:px-0 py-6">
-        <div className="grid grid-cols-3 gap-4 sm:flex sm:items-center sm:justify-center sm:gap-x-6">
+      <div className="w-full bg-[#F2F2F2] px-5 lg:px-0 py-6">
+        <div className="grid grid-cols-3 gap-4 lg:flex lg:items-center lg:justify-center lg:gap-x-6">
           {Items.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col items-center justify-center bg-[#D5D5D5] w-full h-[100px] sm:w-[216px] sm:h-[216px]"
+              className="flex flex-col items-center justify-center bg-[#D5D5D5] w-full h-[100px] lg:w-[216px] lg:h-[216px]"
             >
-              <img src={item.icon} alt={item.name} className="w-12 h-12 sm:w-20 sm:h-20 mb-2 sm:mb-4" />
-              <span className="text-base sm:text-lg font-bold text-[#787777]">{item.name}</span>
+              <img src={item.icon} alt={item.name} className="w-12 h-12 lg:w-20 lg:h-20 mb-2 lg:mb-4" />
+              <span className="text-base lg:text-lg font-bold text-[#787777]">{item.name}</span>
             </div>
           ))}
         </div>
@@ -104,9 +104,9 @@ const LatestNewsSection = () => {
       <div className="relative">
         <div className="z-10 mt-20 mx-auto pb-20 max-w-[1417px] w-full">
           {/* 上方標題 */}
-          <div className="mb-6 flex flex-col sm:flex-row justify-between items-center">
-            <div className="text-2xl font-bold text-[#A29380] mb-4 sm:mb-0">最新活動</div>
-            <div className="hidden sm:block">
+          <div className="mb-6 flex flex-col lg:flex-row justify-between items-center">
+            <div className="text-2xl font-bold text-[#A29380] mb-4 lg:mb-0">最新活動</div>
+            <div className="hidden lg:block">
               <button onClick={handlePrevPage} className="p-2">
                 <img src="/images/icons/nav_left_arrow.png" alt="nav_left_arrow" />
               </button>
@@ -118,7 +118,7 @@ const LatestNewsSection = () => {
 
           {/* 活動內容 */}
           {/* 手機版：橫向滑動 */}
-          <div className="sm:hidden w-full px-2 overflow-x-auto pb-2">
+          <div className="lg:hidden w-full px-2 overflow-x-auto pb-2">
             <div className="flex flex-row flex-nowrap gap-4">
               {activityList.map((activity) => (
                 <div key={activity.id} className="min-w-[335px]">
@@ -128,7 +128,7 @@ const LatestNewsSection = () => {
             </div>
           </div>
           {/* 桌機版：原本分頁 */}
-          <div className="hidden sm:flex justify-between">
+          <div className="hidden lg:flex justify-between">
             <div className="">
               <div className="mb-[222px]">用兩小時，學一生智慧</div>
               <div>

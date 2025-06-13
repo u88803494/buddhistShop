@@ -96,7 +96,7 @@ const Nav = () => {
             <img src="images/logo_navbar.png" alt="logo" className="h-8 w-auto" />
           </div>
           {/* Desktop Menu */}
-          <div className="flex-[2] items-center justify-center hidden md:flex">
+          <div className="flex-[2] items-center justify-center hidden lg:flex">
             <ul className="flex space-x-4">
               {menuItems.map((item, idx) => (
                 <li key={idx} className="relative group">
@@ -153,7 +153,7 @@ const Nav = () => {
               {icons.cart}
             </button>
             {/* Hamburger */}
-            <button className="md:hidden ml-2" onClick={() => setMobileOpen(true)} aria-label="Open menu">
+            <button className="lg:hidden ml-2" onClick={() => setMobileOpen(true)} aria-label="Open menu">
               <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M4 6h16M4 12h16M4 18h16" />
               </svg>

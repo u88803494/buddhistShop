@@ -22,9 +22,9 @@ const productListPage = () => {
   const pagedProducts = filteredProducts.slice((page - 1) * pageSize, page * pageSize);
 
   return (
-    <div className={clsx("flex flex-col sm:flex-row", "min-h-screen")}>
+    <div className={clsx("flex flex-col lg:flex-row", "min-h-screen")}>
       <CategorySidebar />
-      <main className={clsx("mt-4 sm:mt-[86px]", "flex-1", "px-5 sm:px-0")}>
+      <main className={clsx("mt-4 lg:mt-[86px]", "flex-1", "px-5 lg:px-0")}>
         <ProductListHeader totalProducts={filteredProducts.length} />
         <ProductGrid products={pagedProducts} />
         <div className="my-20">

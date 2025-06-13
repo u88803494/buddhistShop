@@ -21,14 +21,14 @@ const ProductListHeader: React.FC<ProductListHeaderProps> = ({ totalProducts }) 
   return (
     <div
       className={clsx(
-        "flex flex-col sm:flex-row",
-        "items-start sm:items-center",
+        "flex flex-col lg:flex-row",
+        "items-start lg:items-center",
         "justify-between",
         "mb-6 relative text-sm"
       )}
     >
       {/* 總商品數量計算 */}
-      <span className={clsx("text-[#545454]", "mb-2 sm:mb-0")}>共 {totalProducts} 項商品</span>
+      <span className={clsx("text-[#545454]", "mb-2 lg:mb-0")}>共 {totalProducts} 項商品</span>
 
       {/* 下拉選單 */}
       <div className="relative inline-block w-[108px]">

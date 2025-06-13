@@ -17,7 +17,7 @@ const banners = [
 
 const HeroCarousel = () => {
   return (
-    <section className="relative w-full h-[180px] sm:h-[260px] md:h-[340px] lg:h-[480px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[180px] lg:h-[260px] md:h-[340px] lg:h-[480px] flex items-center justify-center overflow-hidden">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -27,7 +27,7 @@ const HeroCarousel = () => {
       >
         {banners.map((banner, idx) => (
           <SwiperSlide key={idx}>
-            <div className="relative w-full h-[180px] sm:h-[260px] md:h-[340px] lg:h-[480px]">
+            <div className="relative w-full h-[180px] lg:h-[260px] md:h-[340px] lg:h-[480px]">
               <Image src={banner?.image ?? ""} alt={banner?.image ?? ""} fill priority={idx === 0} />
             </div>
           </SwiperSlide>

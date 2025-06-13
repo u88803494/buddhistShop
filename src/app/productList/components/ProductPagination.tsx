@@ -37,7 +37,7 @@ const ProductPagination: React.FC<ProductPaginationProps> = ({ currentPage, tota
   return (
     <div className="flex items-center justify-center space-x-2">
       {/* 手機版：簡化分頁 */}
-      <div className="flex w-full items-center justify-center sm:hidden space-x-4">
+      <div className="flex w-full items-center justify-center lg:hidden space-x-4">
         <button
           className={clsx(BUTTON_BASE_CLASSES, {
             "text-[#D5D5D5]": currentPage === 1,
@@ -73,7 +73,7 @@ const ProductPagination: React.FC<ProductPaginationProps> = ({ currentPage, tota
         </button>
       </div>
       {/* 桌機版：原本分頁 */}
-      <div className="hidden sm:flex items-center justify-center space-x-2">
+      <div className="hidden lg:flex items-center justify-center space-x-2">
         <button
           className={clsx(BUTTON_BASE_CLASSES, {
             "text-[#D5D5D5]": currentPage === 1,
