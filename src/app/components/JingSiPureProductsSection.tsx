@@ -4,6 +4,7 @@ import { products } from "@/mockData/products";
 import ProductCard from "@/components/ProductCard";
 import Button from "@/components/bases/Button";
 import { useRouter } from "next/navigation";
+import clsx from "clsx";
 
 const JingSiProductsSection = () => {
   const router = useRouter();
@@ -11,7 +12,13 @@ const JingSiProductsSection = () => {
   return (
     <>
       {/* 上方灰色區塊 */}
-      <div className="relative w-full h-auto min-h-[500px] sm:h-[350px] bg-[#F2F2F2] flex items-center justify-center overflow-hidden py-8 sm:py-0">
+      <div className={clsx(
+        "relative w-full h-auto min-h-[500px] sm:h-[350px]", 
+        "bg-[#F2F2F2]", 
+        "flex items-center justify-center", 
+        "overflow-hidden", 
+        "py-8 sm:py-0"
+      )}>
         {/* 左上圓形裝飾 - 只在桌面版顯示 */}
         <img
           src="/images/jing_si_prue_cycle_left.png"
@@ -64,15 +71,32 @@ const JingSiProductsSection = () => {
       </div>
 
       {/* 下方白色區塊 */}
-      <div className="my-20 mx-auto max-w-[1417px] w-full">
+      <div className="mt-5 my-20 mx-auto max-w-[1417px] w-full px-5 sm:px-0">
         {/* 上方標題 */}
         <div className="mb-8 flex items-center">
           <div className="text-2xl font-bold text-[#A29380]">淨斯商品</div>
         </div>
 
         {/* 商品內容 */}
-        <div className="mb-10 grid grid-cols-4 gap-x-6 gap-y-8">
-          {products.map((p) => (
+        {/* 手機版：橫向滑動 */}
+        <div className="flex sm:hidden mb-10 w-full overflow-x-auto pb-4">
+          <div className="flex flex-row flex-nowrap gap-4">
+            {products.slice(0, 12).map((p) => (
+              <div key={p.id} className="min-w-[280px]">
+                <ProductCard
+                  image={p.image}
+                  title={p.name}
+                  price={p.price}
+                  specialPrice={p.specialPrice}
+                  width="280"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* 桌機版：grid */}
+        <div className="hidden sm:grid sm:grid-cols-4 gap-x-6 gap-y-8 mb-10">
+          {products.slice(0, 12).map((p) => (
             <ProductCard
               key={p.id}
               image={p.image}
