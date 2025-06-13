@@ -15,7 +15,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ onCategoryChange, activeCateg
         <div
           key={category}
           onClick={() => onCategoryChange(category)}
-          className={clsx("pb-2 cursor-pointer text-[#787777]", {
+          className={clsx("pb-2 cursor-pointer text-[#787777] whitespace-nowrap", {
             "text-[#A29380] border-b-1 border-[#A29380]": activeCategory === category,
           })}
         >

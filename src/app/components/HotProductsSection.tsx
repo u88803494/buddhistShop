@@ -5,6 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import ProductTabs from "@/components/ProductTabs";
 import { ProductCategory } from "@/types/product";
 import { products } from "@/mockData/products";
+import clsx from "clsx";
 
 const HotProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState<ProductCategory>(ProductCategory.All);
@@ -35,19 +36,27 @@ const HotProductsSection = () => {
 
         {/* 商品內容 */}
         <div className="flex flex-col sm:flex-row">
-          <div className="w-full mb-6 sm:mb-0 sm:mr-6 hidden sm:block">
-            <img src="/images/jing_si.png" alt="" className="w-full h-auto sm:w-[456px] sm:h-[884px] object-cover" />
+          <div className="mb-6 hidden sm:mb-0 sm:mr-6 sm:block">
+            <img src="/images/jing_si.png" alt="" className="h-auto sm:w-[456px] sm:h-[884px] object-cover" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-8 w-full max-w-full sm:max-w-[963px] px-0 sm:px-0 place-items-center">
+          <div className={clsx(
+            "flex sm:grid sm:grid-cols-3",
+            "gap-x-6 gap-y-8",
+            "w-full max-w-full sm:max-w-[963px]",
+            "px-0 sm:px-0",
+            "overflow-x-auto sm:overflow-x-visible",
+            "sm:place-items-center"
+          )}>
             {filteredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                image={product.image}
-                title={product.name}
-                price={product.price}
-                specialPrice={product.specialPrice}
-                width="296"
-              />
+              <div key={product.id} className="flex-none w-[280px] sm:w-auto">
+                <ProductCard
+                  image={product.image}
+                  title={product.name}
+                  price={product.price}
+                  specialPrice={product.specialPrice}
+                  width="296"
+                />
+              </div>
             ))}
           </div>
         </div>
