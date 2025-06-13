@@ -48,8 +48,7 @@ src/
 │   ├── Footer.tsx        # 頁尾組件
 │   ├── ProductCard.tsx   # 商品卡片組件
 │   ├── ProductTabs.tsx   # 商品標籤組件
-│   ├── bases/           # 基礎組件
-│   └── ui/              # UI 組件
+│   └── bases/            # 基礎組件
 ├── types/                # TypeScript 類型定義
 ├── mockData/            # 開發用模擬數據
 └── lib/                 # 工具函數和庫
@@ -146,8 +145,7 @@ src/
 │   ├── Footer.tsx        # Footer component
 │   ├── ProductCard.tsx   # Product card component
 │   ├── ProductTabs.tsx   # Product tabs component
-│   ├── bases/           # Base components
-│   └── ui/              # UI components
+│   └── bases/            # Base components
 ├── types/                # TypeScript type definitions
 ├── mockData/            # Mock data for development
 └── lib/                 # Utility functions and libraries
