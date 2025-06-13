@@ -6,7 +6,7 @@ import ActivityCard from "./ActivityCard";
 const Items = [
   { id: 1, name: "易購", icon: "/images/icons/praise.png" },
   { id: 2, name: "食品", icon: "/images/icons/fork_knife.png" },
-  { id: 3, name: "百貨", icon: "/images/icons/storefront.png" },
+  { id: 3, name: "百貨", icon: "/images/icons/store_front.png" },
   { id: 4, name: "書籍", icon: "/images/icons/book_open_text.png" },
   { id: 5, name: "影音", icon: "/images/icons/monitor_play.png" },
   { id: 6, name: "電子書", icon: "/images/icons/laptop.png" },
