@@ -13,6 +13,12 @@ const BUTTON_BASE_CLASSES =
   "w-8 h-8 flex items-center justify-center border transition-colors duration-200 rounded-[2px]";
 
 const ProductPagination: React.FC<ProductPaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
+  const handlePageChange = (page: number) => {
+    onPageChange(page);
+    // 捲動到頁面頂部
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const generatePageNumbers = (currentPage: number, totalPages: number): (number | "...")[] => {
     // 如果總頁數小於等於 7，直接顯示所有頁碼
     if (totalPages <= 7) {
@@ -43,7 +49,7 @@ const ProductPagination: React.FC<ProductPaginationProps> = ({ currentPage, tota
             "text-[#D5D5D5]": currentPage === 1,
             "text-[#545454]": currentPage !== 1,
           })}
-          onClick={() => onPageChange(currentPage - 1)}
+          onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +67,7 @@ const ProductPagination: React.FC<ProductPaginationProps> = ({ currentPage, tota
             "text-[#D5D5D5]": currentPage === totalPages,
             "text-[#545454]": currentPage !== totalPages,
           })}
-          onClick={() => onPageChange(currentPage + 1)}
+          onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +85,7 @@ const ProductPagination: React.FC<ProductPaginationProps> = ({ currentPage, tota
             "text-[#D5D5D5]": currentPage === 1,
             "text-[#545454]": currentPage !== 1,
           })}
-          onClick={() => onPageChange(currentPage - 1)}
+          onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +111,7 @@ const ProductPagination: React.FC<ProductPaginationProps> = ({ currentPage, tota
                 "border-[#88745C] bg-[#E4D9CC] text-[#88745C]": page === currentPage,
                 "border-[#D5D5D5] text-[#545454]": page !== currentPage,
               })}
-              onClick={() => onPageChange(page as number)}
+              onClick={() => handlePageChange(page as number)}
             >
               {page}
             </button>
@@ -116,7 +122,7 @@ const ProductPagination: React.FC<ProductPaginationProps> = ({ currentPage, tota
             "text-[#D5D5D5]": currentPage === totalPages,
             "text-[#545454]": currentPage !== totalPages,
           })}
-          onClick={() => onPageChange(currentPage + 1)}
+          onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
