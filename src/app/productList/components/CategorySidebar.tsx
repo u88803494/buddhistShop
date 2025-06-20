@@ -41,9 +41,9 @@ const CategorySidebar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <>
+    <div className="relative">
       {/* 手機版選單按鈕 */}
-      <div className={clsx("mb-4 mx-5", "lg:hidden")}>
+      <div className={clsx("mb-4 mx-2", "lg:hidden")}>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={clsx("w-full py-2 px-4", "bg-[#F2F2F2] text-[#545454]", "flex items-center justify-between")}
@@ -59,13 +59,16 @@ const CategorySidebar = () => {
           // 手機版顯示邏輯
           isMobileMenuOpen ? "block" : "hidden",
           "lg:block",
+          // 手機版浮動定位
+          "absolute top-full left-0 right-0 z-50",
+          "lg:relative lg:top-auto lg:left-auto lg:right-auto lg:z-auto",
           // 寬度
           "w-full",
           "lg:w-56",
           // 背景和高度
           "bg-white h-fit select-none",
           // 間距
-          "mx-5 lg:mx-0 lg:mt-8 lg:mr-20"
+          "lg:mx-0 lg:mt-8 lg:mr-20"
         )}
       >
         {/* 麵包屑 */}
@@ -123,7 +126,7 @@ const CategorySidebar = () => {
           ))}
         </ul>
       </aside>
-    </>
+    </div>
   );
 };
 
