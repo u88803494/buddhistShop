@@ -24,7 +24,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
         />
       </div>
 
-      <div className="mt-6">
+      <div className="mt-6 px-4">
         <div className="text-sm text-gray-600 mb-2">
           <p>
             {activity.date} {activity.position}
